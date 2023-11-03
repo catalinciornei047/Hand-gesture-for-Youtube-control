@@ -1,0 +1,22 @@
+Pentru a instala și rula proiectul de control al player-ului YouTube prin detecția de gesturi ale mâinilor, urmați următorii pași:
+1. Instalarea mediului PyCharm cu versiunea interpretorului Python 3.9;
+2. Instalarea framework-ului TensorFlow prin comanda pip install tensorflow;
+3. Instalarea mediului web Jupyter prin comanda pip install jupyter notebook;
+4. Instalarea bibliotecii Mediapipe prin comanda pip install mediapipe;
+5. Instalarea bibliotecii PyAutoGUI prin comanda pip install pyautogui;
+6. Instalarea bibliotecii OpenCV prin comanda pip install opencv-python;
+7. Instalarea bibliotecii protobuf prin comanda pip install protobuf;
+8. Instalarea bibliotecii scikit-learn prin comanda pip pip install -U scikit-learn;
+9. După ce toate bibliotecile au fost instalate cu succes se poate porni exucutabilil app și rula programul;
+10. Dacă dorim să introducem un nou gest după rularea programului acționăm tasta K și realizăm diferite poziții pentru gestul ales
+    în timp ce apăsăm o tastă cu un număr cuprins între 0 și 9 de fiecare dată când dorim să salvăm punctele cheie ale gestului,
+    codul are deja 9 gesturi fapt pentru care putem opta pentru ștergerea unui gest prin accesarea fișierelor keypoint.cvs și ștergerea
+    punctelor cheie, mai apoi fiind nevoie de a modifica fișierul keypoint_classifier_label.cvs.
+    Pentru a antrena noul gest accesăm cmd unde executăm comanda jupyter notebook pentru a deschide fișierul keypoint_classification.ipynb
+    unde vom modifica numărul de gesturi în funcție de numărul celor din fișierul keypoint_classifier_label.cvs, salvăm și de la Kernel alegem
+    Restart & Run All. Modelul o să fie antrenat și salvat în fișierul model/keypoint_classifier/keypoint_classifier.tflite.
+    După această procedură putem rula din nou programul și să executăm noul gest introdus.
+11. Dacă dorim să controlăm cu gesturi media player-ul YouTube putem rula programul și accesăm un video de pe platformă, 
+    în funcția def action_hand_sign(hand_sign_label): putem regăsii fiecare semn alături de tasta care se apăsă în momentul executării acestuia.
+    Gesturile OK și PLAY nothing sunt utilizate fără a apăsa o tastă, sunt folosite pe post de intermediar între celelalte gesturi pentru a 
+    facilita flexibilitatea dintre gesturi fără a exista interacțiuni sau gesturi nedorite în timpul controlului.
